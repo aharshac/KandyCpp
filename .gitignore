@@ -34,6 +34,7 @@
 # Kandy lib specific
 cmd.txt
 kandy_sms
+build/
 
 
 # CMake
