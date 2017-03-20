@@ -8,15 +8,15 @@ project(kandy)
 set(CMAKE_CXX_FLAGS "-g -Wall -std=c++11")
 
 # Vars
-set(LIBRARY_OUTPUT_PATH  ${CMAKE_CURRENT_SOURCE_DIR}/build)
+#set(LIBRARY_OUTPUT_PATH  build)
  
 #	set library directories
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/curlcpp)
+add_subdirectory(lib/curlcpp)
 include_directories(${CURLCPP_SOURCE_DIR}/include)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib/json)
+include_directories(lib/json)
 
 #	Headers
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(include)
 
 #	Sources
 file(GLOB SOURCES "src/*.cpp")
