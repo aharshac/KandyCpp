@@ -32,7 +32,7 @@ namespace kandy {
 	    	
 		public:
 			sms(string domain_api_key, string domain_secret, string user_id, string &user_access_token, string &device_id);
-			sms(string domain_api_key, string domain_secret, string user_id, bool &success);
+			sms(string domain_api_key, string domain_secret, string user_id, bool &successd);
 			bool send(string source, string destination, string text);
 	};
 }

@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <ostream>
-//#include <runtime_error>
 #include <stdexcept>
 
 #include "curl_easy.h"
@@ -124,13 +123,12 @@ namespace kandy {
 	}
 			
 	bool sms::send(string source, string destination, string text) {
-		if (sms::g_user_access_token.empty()) {
-			throw runtime_error("User Access Token is null"_s);
-		}
+		if (sms::g_user_access_token.empty()) throw runtime_error("User Access Token is null"_s);
+		if (sms::g_device_id.empty()) throw runtime_error("Device ID is null"_s);
 
-		if (sms::g_device_id.empty()) {
-			throw runtime_error("Device ID is null"_s);
-		}
+		if (source.empty()) throw invalid_argument("Invalid source phone number"_s);
+        if (destination.empty()) throw invalid_argument("Invalid destination phone number"_s);
+        if (text.empty()) throw invalid_argument("Invalid text"_s);
 
 		json payload;
 	    payload["message"]["source"] = source;
