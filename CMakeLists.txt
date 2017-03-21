@@ -18,14 +18,15 @@ include_directories(${CURLCPP_SOURCE_DIR}/include)
 include_directories(${KANDY_SOURCE_DIR}/lib/json)
 include_directories(${KANDY_SOURCE_DIR}/include)
 
-file(GLOB HEADER_LIST "${KANDY_SOURCE_DIR}/include/*.hpp")
-install (FILES ${HEADER_LIST} DESTINATION include)
+file(GLOB HEADERS "${KANDY_SOURCE_DIR}/include/*.hpp")
+install (FILES ${HEADERS} DESTINATION include)
 
 #	Sources
 file(GLOB SOURCES "src/*.cpp")
 
-add_library(kandy ${SOURCES})
+add_library(kandy ${HEADERS} ${SOURCES})
 target_link_libraries(kandy curlcpp curl)
+
 install (TARGETS kandy LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
 
 set(KANDY_LIB_LOCATION "$<TARGET_FILE:${kandy}>")
