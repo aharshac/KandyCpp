@@ -105,7 +105,7 @@ namespace kandy {
 
 	/*** Public ***/
 
-	sms::sms(string domain_api_key, string domain_secret, string user_id) {
+	sms::sms(string domain_api_key, string domain_secret, string user_id, string &user_access_token, string &device_id) {
 		sms::check_init_error(domain_api_key, domain_secret, user_id);
 		sms::g_domain_api_key = domain_api_key;
 		sms::g_domain_secret = domain_secret;
@@ -113,6 +113,14 @@ namespace kandy {
 
 	    sms::get_user_access_token();	    
 	    sms::get_device_id();
+	    user_access_token = sms::g_user_access_token;
+	    device_id = sms::g_device_id;
+	}
+
+	sms::sms(string domain_api_key, string domain_secret, string user_id, bool &success) {
+		string user_access_token, device_id;
+		sms(domain_api_key, domain_secret, user_id, user_access_token, device_id);
+		success = (!user_access_token.empty() and !device_id.empty());
 	}
 			
 	bool sms::send(string source, string destination, string text) {
