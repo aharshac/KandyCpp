@@ -4,6 +4,7 @@ C++ wrapper for [Kandy.io](https://www.kandy.io/) REST API endpoints that deal w
 Read the complete docs for the REST API at [Kandy Developers](https://developer.kandy.io/docs/rest-api)
 
     
+    
 
 ## Dependencies
 * [libcurl](https://curl.haxx.se/libcurl/)
@@ -41,6 +42,7 @@ Assumes a **git** based dependent project on **linux**, with **cmake** as the bu
 8. Update **kandy** and other submodules.   
   `git submodule update --recursive --remote`
 
+    
     
 
 # Library Reference
