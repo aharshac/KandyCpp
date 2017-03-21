@@ -4,6 +4,8 @@ set(KANDY_INCLUDE_DIRS "@KANDY_SOURCE_DIR@/include")
 set(KANDY_LIBRARY_DIRS "@KANDY_BINARY_DIR@/src")
 set(KANDY_LIBRARIES "@KANDY_LIB_LOCATION@")
 
+set(KANDY_CONFIG "@KANDY_SOURCE_DIR@/kandyConfig.cmake)
+
 include_directories("@CURLCPP_SOURCE_DIR@/include")
 include_directories("@KANDY_SOURCE_DIR@/lib/json")
 include_directories("@KANDY_SOURCE_DIR@/include")
