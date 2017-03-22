@@ -39,7 +39,8 @@ Assumes a **git** based dependent project on **linux**, with **cmake** as the bu
 7. Build project output.  
   `make`
 
-8. Update **kandy** and other submodules.   
+8. Update **Kandy C++ SMS Library** and other submodules.   
+  Do this to update to the latest commits.      
   `git submodule update --recursive --remote`
 
     
