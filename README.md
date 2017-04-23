@@ -30,7 +30,7 @@ Assumes a **git** based dependent project on **linux**, with **cmake** as the bu
 5. Add **cmake** dependencies to your project.
   ```
   add_subdirectory(lib/kandy)   
-  include("${KANDY_SOURCE_DIR}/kandyConfig.cmake")    
+  kandy_include_dependencies()    
   ```
 
 6. Build cmake *generator*.   
