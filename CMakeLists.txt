@@ -29,9 +29,11 @@ target_link_libraries(kandy curlcpp curl)
 
 install (TARGETS kandy LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
 
-set(KANDY_LIB_LOCATION "$<TARGET_FILE:${kandy}>")
-
-configure_file(${KANDY_SOURCE_DIR}/CMake/kandyConfig.cmake.in ${KANDY_BINARY_DIR}/kandyConfig.cmake @ONLY)
-
-
+# 	macro for use in dependents 
+macro(kandy_include_dependencies)
+  MESSAGE(STATUS "# Kandy: Including dependencies")
+  include_directories(${CURLCPP_SOURCE_DIR}/include)
+  include_directories(${KANDY_SOURCE_DIR}/lib/json)
+  include_directories(${KANDY_SOURCE_DIR}/include)
+endmacro()
 
