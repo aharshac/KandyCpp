@@ -22,7 +22,7 @@ Assumes a **git** based dependent project on **linux**, with **cmake** as the bu
 
 3. Install **kandy** library as a submodule.  
   This will initialize the submodule at `lib/kandy`.   
-  `git submodule add git@bitbucket.org:kandyhack/kandycpp.git lib/kandy`
+  `git submodule add https://github.com/aharshac/KandyCpp.git lib/kandy`
 
 4. Download **kandy** library files.  
   `git submodule update --init --recursive`
