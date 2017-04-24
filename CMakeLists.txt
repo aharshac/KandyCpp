@@ -21,13 +21,15 @@ include_directories(${KANDY_SOURCE_DIR}/include)
 file(GLOB HEADERS "${KANDY_SOURCE_DIR}/include/*.hpp")
 install (FILES ${HEADERS} DESTINATION include)
 
-#	Sources
+#	sources
 file(GLOB SOURCES "src/*.cpp")
 
+# 	link libraries
 add_library(kandy ${HEADERS} ${SOURCES})
 target_link_libraries(kandy curlcpp curl)
 
-install (TARGETS kandy LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
+#	test install
+#install (TARGETS kandy LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
 
 # 	macro for use in dependents 
 macro(kandy_include_dependencies)
