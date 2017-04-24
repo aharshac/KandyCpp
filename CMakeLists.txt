@@ -7,9 +7,6 @@ project(KANDY)
 #	set c++ flags
 set(CMAKE_CXX_FLAGS "-g -Wall -std=c++11")
 
-# Vars
-set(LIBRARY_OUTPUT_PATH  build)
- 
 #	set library directories
 add_subdirectory(${KANDY_SOURCE_DIR}/lib/curlcpp)
 
@@ -17,9 +14,7 @@ add_subdirectory(${KANDY_SOURCE_DIR}/lib/curlcpp)
 include_directories(${CURLCPP_SOURCE_DIR}/include)
 include_directories(${KANDY_SOURCE_DIR}/lib/json)
 include_directories(${KANDY_SOURCE_DIR}/include)
-
 file(GLOB HEADERS "${KANDY_SOURCE_DIR}/include/*.hpp")
-install (FILES ${HEADERS} DESTINATION include)
 
 #	sources
 file(GLOB SOURCES "src/*.cpp")
@@ -27,9 +22,6 @@ file(GLOB SOURCES "src/*.cpp")
 # 	link libraries
 add_library(kandy ${HEADERS} ${SOURCES})
 target_link_libraries(kandy curlcpp curl)
-
-#	test install
-#install (TARGETS kandy LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
 
 # 	macro for use in dependents 
 macro(kandy_include_dependencies)
